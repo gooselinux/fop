@@ -1,0 +1,15 @@
+--- ../../orig/fop-0.94/src/java/org/apache/fop/cli/Main.java	2007-08-18 13:56:46.000000000 -0400
++++ src/java/org/apache/fop/cli/Main.java	2007-09-18 09:19:53.000000000 -0400
+@@ -193,11 +193,7 @@
+      * @param args the command line parameters
+      */
+     public static void main(String[] args) {
+-        if (checkDependencies()) {
+-            startFOP(args);
+-        } else {
+-            startFOPWithDynamicClasspath(args);
+-        }
++    	startFOP(args);
+     }
+ 
+ }

@@ -1,0 +1,22 @@
+diff -uN fop-0.94/build.xml fop-0.94-mod/build.xml
+--- fop-0.94/build.xml	2007-08-18 19:56:46.000000000 -0400
++++ fop-0.94-mod/build.xml	2007-09-17 16:41:01.000000000 -0400
+@@ -502,10 +502,10 @@
+       <map from="${optional.lib.dir}${file.separator}" to=""/>
+     </pathconvert>
+ 
+-    <jar jarfile="${build.dir}/fop.jar" basedir="${build.classes.dir}">
++    <jar jarfile="${build.dir}/fop.jar" 
++	basedir="${build.classes.dir}"
++	manifest="${basedir}/fop.mf">
+       <manifest>
+-        <attribute name="Main-Class" value="org.apache.fop.cli.Main"/>
+-        <attribute name="Class-Path" value="${manifest.classpath}"/>
+         <attribute name="Build-Id" value="${ts} (${user.name} [${os.name} ${os.version} ${os.arch}, Java ${java.runtime.version}])"/>
+         <section name="org/apache/fop/">
+           <attribute name="Specification-Title" value="XSL-FO - Extensible Stylesheet Language"/>
+--- fop-0.94/fopmf.old	2007-11-23 10:53:31.000000000 -0500
++++ fop-0.94/fop.mf	2007-11-23 10:53:18.000000000 -0500
+@@ -0,0 +1,2 @@
++Manifest-Version: 1.0
++Main-Class: org.apache.fop.cli.Main
